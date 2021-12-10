@@ -6,7 +6,7 @@
 :root {
   --bg: #fafafa;
 }
-body {
+.buttons {
   display: flex;
   align-items: center;
   justify-content: center;
