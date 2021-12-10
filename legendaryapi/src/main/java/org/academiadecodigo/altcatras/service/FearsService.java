@@ -1,6 +1,6 @@
 package org.academiadecodigo.altcatras.service;
 
-import org.academiadecodigo.altcatras.Fears;
+import org.academiadecodigo.altcatras.models.Fear;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -11,25 +11,23 @@ import java.util.Map;
 @Service
 public class FearsService {
 
-    private List<Fears> fearsList = new LinkedList<>();
+    private Map<Integer, Fear> fearsList = new HashMap();
 
     FearsService (){
-        Fears dark = new Fears("Dark", 1);
-        Fears bugs = new Fears("Bugs", 2);
-        Fears doctors = new Fears("Doctors", 3);
-        Fears alone = new Fears("Alone", 4);
-        Fears monsters = new Fears("Monsters", 5);
+        Fear dark = new Fear("Dark");
+        Fear bugs = new Fear("Bugs");
+        Fear doctors = new Fear("Doctors");
+        Fear alone = new Fear("Alone");
+        Fear monsters = new Fear("Monsters");
 
-        fearsList.add(dark);
-        fearsList.add(bugs);
-        fearsList.add(doctors);
-        fearsList.add(alone);
-        fearsList.add(monsters);
+        fearsList.put(1, dark);
+        fearsList.put(2, bugs);
+        fearsList.put(3, doctors);
+        fearsList.put(4, alone);
+        fearsList.put(5, monsters);
     }
 
-    public List<Fears> getFearsList() {
+    public Map<Integer, Fear> getFears() {
         return this.fearsList;
     }
-
-
 }

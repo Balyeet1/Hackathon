@@ -1,3 +1,6 @@
-/Users/codecadet/workspace/howimetyourmother/Hackathon/legendaryapi/src/main/java/org/academiadecodigo/altcatras/FearsController.java
-/Users/codecadet/workspace/howimetyourmother/Hackathon/legendaryapi/src/main/java/org/academiadecodigo/altcatras/Fears.java
-/Users/codecadet/workspace/howimetyourmother/Hackathon/legendaryapi/src/main/java/org/academiadecodigo/altcatras/Stories.java
+/Users/codecadet/workspace/howimetyourmother/Hackathon/legendaryapi/src/main/java/org/academiadecodigo/altcatras/Controllers/FearsController.java
+/Users/codecadet/workspace/howimetyourmother/Hackathon/legendaryapi/src/main/java/org/academiadecodigo/altcatras/models/Story.java
+/Users/codecadet/workspace/howimetyourmother/Hackathon/legendaryapi/src/main/java/org/academiadecodigo/altcatras/Controllers/StoriesController.java
+/Users/codecadet/workspace/howimetyourmother/Hackathon/legendaryapi/src/main/java/org/academiadecodigo/altcatras/models/Fear.java
+/Users/codecadet/workspace/howimetyourmother/Hackathon/legendaryapi/src/main/java/org/academiadecodigo/altcatras/service/StoriesService.java
+/Users/codecadet/workspace/howimetyourmother/Hackathon/legendaryapi/src/main/java/org/academiadecodigo/altcatras/service/FearsService.java

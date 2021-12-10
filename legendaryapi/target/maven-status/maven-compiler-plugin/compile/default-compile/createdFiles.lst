@@ -1,4 +1,6 @@
-org/academiadecodigo/altcatras/Fears.class
+org/academiadecodigo/altcatras/Controllers/StoriesController.class
+org/academiadecodigo/altcatras/Controllers/FearsController.class
+org/academiadecodigo/altcatras/models/Fear.class
 org/academiadecodigo/altcatras/service/FearsService.class
-org/academiadecodigo/altcatras/Stories.class
-org/academiadecodigo/altcatras/FearsController.class
+org/academiadecodigo/altcatras/models/Story.class
+org/academiadecodigo/altcatras/service/StoriesService.class
