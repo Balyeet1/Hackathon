@@ -8,7 +8,7 @@ var displayButtons = function(response) {
 
     console.log(response);
     for (var key in response) {
-        $('#buttons').append('<button id="btn-' + key + '" role="button" tabindex="0" style="--buttonColor: #000000">' + response[key].name + '<span></span><span></span><span></span><b aria-hidden="true">' + response[key].name + '</b><b aria-hidden="true">' + response[key].name + '</b><b aria-hidden="true">' + response[key].name+ '</b><b aria-hidden="true">' + response[key].name + '</b></button>');
+        $('#myDropdown').append('<a id="btn-' + response[key].name + '" >' + response[key].name + '</a>');
         console.log(response[key].name);
         
     };
