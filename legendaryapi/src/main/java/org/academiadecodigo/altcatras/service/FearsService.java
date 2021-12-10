@@ -11,7 +11,7 @@ import java.util.Map;
 @Service
 public class FearsService {
 
-    private Map<Integer, Fears> fearsList = new HashMap<>();
+    private List<Fears> fearsList = new LinkedList<>();
 
     FearsService (){
         Fears dark = new Fears("Dark", 1);
@@ -20,15 +20,15 @@ public class FearsService {
         Fears alone = new Fears("Alone", 4);
         Fears monsters = new Fears("Monsters", 5);
 
-        fearsList.put(1, dark);
-        fearsList.put(2, bugs);
-        fearsList.put(3, doctors);
-        fearsList.put(4, alone);
-        fearsList.put(5, monsters);
+        fearsList.add(dark);
+        fearsList.add(bugs);
+        fearsList.add(doctors);
+        fearsList.add(alone);
+        fearsList.add(monsters);
     }
 
-    public Map<Integer, Fears> getFearsList() {
-        return fearsList;
+    public List<Fears> getFearsList() {
+        return this.fearsList;
     }
 
 

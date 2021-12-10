@@ -4,15 +4,17 @@ import org.academiadecodigo.altcatras.service.FearsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import org.springframework.web.bind.annotation.RestController;
 
 
-import java.util.Map;
+import java.util.List;
 
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/fear")
 public class FearsController {
@@ -24,16 +26,11 @@ public class FearsController {
         this.fearsService = fearsService;
     }
 
-    /**
-     * Retrieves the API name and version
-     *
-     * @return the response
-     */
-
 
 
     @RequestMapping(method = RequestMethod.GET, value = {"/", ""})
-    public ResponseEntity<Map<Integer, Fears>> listFears() {
+    public ResponseEntity<List<Fears>> listFears() {
+
         return new ResponseEntity<>(fearsService.getFearsList(), HttpStatus.OK);
     }
 }
