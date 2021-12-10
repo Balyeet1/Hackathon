@@ -9,13 +9,14 @@ import java.util.List;
 @Service
 public class StoriesService {
 
+    private String serverUrl = "http://127.0.0.1:8080/legendary/";
     private List<Story> storiesList = new LinkedList<>();
 
     StoriesService() {
         Story darkStories = new Story("AuthorD", "Ramdom/pathD", "dark");
         Story bugsStories = new Story("AuthorB", "Ramdom/pathB", "bugs");
-        Story doctorStories = new Story("AuthorDoc", "Ramdom/pathdo", "doctor");
-        Story aloneStories = new Story("AuthorAl", "Ramdom/pathAl", "alone");
+        Story doctorStories = new Story("AuthorDoc", serverUrl + "resources/Doctor-Maisy.pdf", "doctors");
+        Story aloneStories = new Story("AuthorAl", "resources/", "alone");
         Story monsterStories = new Story("AuthorMos", "Ramdom/pathMos", "monsters");
 
         storiesList.add(darkStories);
