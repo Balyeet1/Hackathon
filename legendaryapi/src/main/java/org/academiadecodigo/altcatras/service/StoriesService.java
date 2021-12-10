@@ -34,4 +34,7 @@ public class StoriesService {
         }
         return null;
     }
+    public void addStory(Story story){
+        storiesList.add(story);
+    }
 }

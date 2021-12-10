@@ -3,16 +3,15 @@ package org.academiadecodigo.altcatras.Controllers;
 import org.academiadecodigo.altcatras.models.Fear;
 import org.academiadecodigo.altcatras.service.FearsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
 
-import org.springframework.web.bind.annotation.RestController;
-
-
-import java.util.List;
+import javax.validation.Valid;
 import java.util.Map;
 
 
@@ -33,5 +32,24 @@ public class FearsController {
     @RequestMapping(method = RequestMethod.GET, value = {"/", ""})
     public ResponseEntity<Map<Integer, Fear>> listFears() {
         return new ResponseEntity<>(fearsService.getFears(), HttpStatus.OK);
+    }
+    @RequestMapping(method = RequestMethod.POST, value = {"/", ""})
+    public ResponseEntity<?> addFear(@Valid @RequestBody Fear fear, BindingResult bindingResult, UriComponentsBuilder uriComponentsBuilder) {
+
+        if (bindingResult.hasErrors()) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
+        this.fearsService.addFear(fear);
+
+        // get help from the framework building the path for the newly created resource
+        UriComponents uriComponents = uriComponentsBuilder.path("/api/fear").build();
+
+        // set headers with the created path
+        HttpHeaders headers = new HttpHeaders();
+        headers.setLocation(uriComponents.toUri());
+
+
+        return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
 }

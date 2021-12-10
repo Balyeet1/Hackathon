@@ -26,6 +26,14 @@ public class FearsService {
         fearsList.put(5, monsters);
     }
 
+    public int getLastIndexOf(){
+        return this.fearsList.size();
+    }
+
+    public void addFear(Fear fear){
+        this.fearsList.put(getLastIndexOf()+1, fear);
+    }
+
     public Map<Integer, Fear> getFears() {
         return this.fearsList;
     }
