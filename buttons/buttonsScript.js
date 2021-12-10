@@ -5,11 +5,14 @@ $(document).ready(function() {
 
 
 var displayButtons = function(response) {
+
     console.log(response);
-    response.forEach(element => {
-        $('#buttons').append('<button id="btn-' + element.id + ' role="button" tabindex="0" style="--buttonColor: #000000">' + element.name + '<span></span><span></span><span></span><b aria-hidden="true">' + element.name + '</b><b aria-hidden="true">' + element.name + '</b><b aria-hidden="true">' + element.name + '</b><b aria-hidden="true">' + element.name + '</b></button>');
-        console.log(element.name);
-    });
+    for (var key in response) {
+        $('#buttons').append('<button id="btn-' + key + '" role="button" tabindex="0" style="--buttonColor: #000000">' + response[key].name + '<span></span><span></span><span></span><b aria-hidden="true">' + response[key].name + '</b><b aria-hidden="true">' + response[key].name + '</b><b aria-hidden="true">' + response[key].name+ '</b><b aria-hidden="true">' + response[key].name + '</b></button>');
+        console.log(response[key].name);
+        
+    };
+    $('[id*=btn-]').click(getStory);
 }
 
 function errormsg(request, status, error) {
@@ -17,6 +20,10 @@ function errormsg(request, status, error) {
     console.log(error);
 }
 
+function showStory(response){
+    console.log(response);
+    $('#omg').append('<a>' + response.path +'</a>');
+}
 
 var getFears = function() {
     $.ajax({
@@ -28,13 +35,19 @@ var getFears = function() {
     })
 }
 
-
-var getFear = function (id) {
-    fears.forEach(element => {
-        if (element.id === id) {
-            return fearName;
-        }
-    });
+var getStory = function(event){
+    var str = event.target.id;
+    var id = str.substring(4);
+    console.log(id);
+    $.ajax({
+        url: 'http://localhost:8080/legendary/api/story/bugs',
+        type: 'Get',
+        async: true,
+        success: showStory,
+        error: errormsg,
+    }) 
 }
+
+
 
 
