@@ -8,8 +8,43 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="buttonstyles.css">
+
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </head>
 <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Legendary Stories</a>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            </ul>
+            <a class="navbar-brand" href="#">
+              <img src="images/home.png" width="40px" height="40px">
+            </a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="images/book.png" width="30" height="30" alt="">
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Dark</a>
+              <a class="dropdown-item" href="#">Bugs</a>
+              <a class="dropdown-item" href="#">Clowns</a>
+            </div>
+          </div>
+      </nav>
+      <div>
+        <h1>Our Project</h1>
+        <div id="projectDescription">
+          How to help your kid not to get scar with dark anymore? Fear no more!
+          With this app you will be able to read the more terryifing stories to help him to overcome his fears
+        </div>
+        <a href="book1.html">Livro 1</a>
+        <a href="book2.html">Livro 2</a>
     
       <div class="slider">
         <div class="slides">
@@ -54,6 +89,13 @@
             
     </div>
 
+    <br>
+    <div class="container">
+        <div class="buttons"> <div id="buttons" style="display: flex; flex-direction: column;"></div>
+       
+    </div>
+    
+    </div>
     <script type="text/javascript">
         var counter = 1;
         setInterval(function(){
