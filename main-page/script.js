@@ -1,5 +1,31 @@
 $(document).ready(function () {
     getFears();
+    $('#feardarkimg').click(function(e){
+        
+        
+        getStoryByimg('dark');
+    });
+
+    $('#feardoctor').click(function(e){
+    
+        getStoryByimg('doctors');
+    });
+
+    $('#fearbugs').click(function(e){
+        
+        getStoryByimg('bugs');
+    });
+    $('#fearmonsters').click(function(e){
+        
+        getStoryByimg('monsters');
+    });
+    $('#fearalone').click(function(e){
+        
+        getStoryByimg('alone');
+    });
+    
+    
+   
 });
 
 
@@ -35,12 +61,25 @@ var getFears = function () {
     })
 }
 
-var getStory = function (event) {
-    var str = event.target.id;
-    var id = str.substring(4);
-    console.log(id);
+var getStoryByimg = function (fear) {
+    
+    console.log(fear);
     $.ajax({
-        url: 'http://localhost:8080/legendary/api/story/' + id,
+        url: 'http://localhost:8080/legendary/api/story/' + fear,
+        type: 'Get',
+        async: true,
+        success: showStory,
+        error: errormsg,
+    })
+}
+
+var getStory = function (event) {
+    
+    var id = event.target.id;
+    var fear = id.substring(4);
+    console.log(fear);
+    $.ajax({
+        url: 'http://localhost:8080/legendary/api/story/' + fear,
         type: 'Get',
         async: true,
         success: showStory,
@@ -50,16 +89,6 @@ var getStory = function (event) {
 
 function myFunction() {
     window.document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function (e) {
-    if (!e.target.matches('.dropbtn')) {
-        var myDropdown = document.getElementById("myDropdown");
-        if (myDropdown.classList.contains('show')) {
-            myDropdown.classList.remove('show');
-        }
-    }
 }
 
 
